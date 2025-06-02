@@ -25,11 +25,26 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="GetStarted" component={LetsGetStartedScreen} />
-        <Stack.Screen name="continue" component={ScannerScreen} />
+        <Stack.Screen
+          name="GetStarted"
+          component={LetsGetStartedScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="continue"
+          component={ScannerScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
         <Stack.Screen
           name="CreateAccountScreen"
           component={CreateAccountScreen}
+          options={{
+            headerShown: false,
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

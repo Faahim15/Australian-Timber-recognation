@@ -2,6 +2,7 @@ import { View, Text, Image } from "react-native";
 import CustomTitle from "../../components/CustomTitle";
 import CutomButton from "../../components/CutomButton";
 import { useNavigation } from "@react-navigation/native";
+import DotIndicator from "../../components/DotIndicator";
 
 export default function ScannerScreen() {
   const navigation = useNavigation();
@@ -9,7 +10,7 @@ export default function ScannerScreen() {
     navigation.navigate("CreateAccountScreen");
   }
   return (
-    <View className="flex-col justify-between items-center gap-y-5">
+    <View className=" bg-[#FAFDFA] flex-col justify-between items-center gap-y-5">
       <CustomTitle
         title="Scan. Timber. Get Insights"
         subtitle="Just take a photo and get instant details about wood type, origin, and properties."
@@ -20,6 +21,7 @@ export default function ScannerScreen() {
         source={require("../../assets/images/QR-code.png")}
       />
       <CutomButton onPress={continueButtonHandler} title="Continue" />
+      <DotIndicator activeIndex={1} />
     </View>
   );
 }

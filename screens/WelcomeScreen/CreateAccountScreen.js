@@ -1,10 +1,11 @@
 import { View, Text, Image } from "react-native";
 import CustomTitle from "../../components/CustomTitle";
 import CutomButton from "../../components/CutomButton";
+import DotIndicator from "../../components/DotIndicator";
 
 export default function CreateAccountScreen() {
   return (
-    <View className="flex-col justify-between items-center gap-y-5">
+    <View className="bg-[#FAFDFA] flex-col justify-between items-center gap-y-5">
       <CustomTitle
         title="Know Your Wood & Tree Profile"
         subtitle="Learn about timber species, their source trees, suitable uses all in one place."
@@ -14,6 +15,7 @@ export default function CreateAccountScreen() {
         source={require("../../assets/images/account.png")}
       />
       <CutomButton title="Create Account" />
+      <DotIndicator activeIndex={2} />
     </View>
   );
 }

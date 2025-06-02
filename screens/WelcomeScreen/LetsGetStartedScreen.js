@@ -3,6 +3,7 @@ import clsx from "clsx";
 import CustomTitle from "../../components/CustomTitle";
 import CutomButton from "../../components/CutomButton";
 import { useNavigation } from "@react-navigation/native";
+import DotIndicator from "../../components/DotIndicator";
 
 export default function LetsGetStartedScreen() {
   const navigation = useNavigation();
@@ -11,7 +12,7 @@ export default function LetsGetStartedScreen() {
   }
 
   return (
-    <View className="flex-col justify-between items-center gap-y-5">
+    <View className="bg-[#FAFDFA] flex-col justify-between items-center gap-y-5">
       <CustomTitle
         title="Welcome to TimberLens"
         subtitle=" Easily identify timber species using your phone"
@@ -22,6 +23,7 @@ export default function LetsGetStartedScreen() {
         source={require("../../assets/images/getStartedImg.png")}
       />
       <CutomButton onPress={startScreenHandler} title="Let's get started" />
+      <DotIndicator activeIndex={0} />
     </View>
   );
 }

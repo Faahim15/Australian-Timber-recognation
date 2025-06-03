@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LetsGetStartedScreen from "./screens/WelcomeScreen/LetsGetStartedScreen";
 import {
   Poppins_400Regular,
+  Poppins_500Medium,
   Poppins_600SemiBold,
   Poppins_700Bold,
   useFonts,
@@ -12,6 +13,7 @@ import {
 import ScannerScreen from "./screens/WelcomeScreen/ScannerScreen";
 import CreateAccountScreen from "./screens/WelcomeScreen/CreateAccountScreen";
 import { NavigationContainer } from "@react-navigation/native";
+import LogInScreen from "./screens/AuthScreens/LogInScreen";
 export default function App() {
   const [fontsLoaded] = useFonts({
     Poppins_400Regular,
@@ -25,7 +27,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        {/* <Stack.Screen
           name="GetStarted"
           component={LetsGetStartedScreen}
           options={{
@@ -45,6 +47,11 @@ export default function App() {
           options={{
             headerShown: false,
           }}
+        /> */}
+        <Stack.Screen
+          name="LogIn"
+          component={LogInScreen}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

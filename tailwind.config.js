@@ -11,8 +11,10 @@ module.exports = {
     extend: {
       fontFamily: {
         poppins: ["Poppins_400Regular"],
+        "poppins-400regular": ["Poppins_400Regular"],
         "poppins-bold": ["Poppins_700Bold"],
         "poppins-semiBold": ["Poppins_600SemiBold"],
+        "poppins-500medium": ["Poppins_500Medium"],
       },
       fontSize: {
         "2xl-custom": ["24px", { lineHeight: "36px" }],

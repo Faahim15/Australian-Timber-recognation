@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 
 export default function CustomTitle({ title, subtitle, description }) {
@@ -14,3 +14,5 @@ export default function CustomTitle({ title, subtitle, description }) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({});

@@ -18,10 +18,16 @@ import {
   LoginTitle,
   SkipButton,
 } from "../../components/authentication/CustomSignNdLogIn";
+import CutomButton from "../../components/CutomButton";
+import SignUpText from "../../components/authentication/SignUpText";
+import ContinueWdGogleBtn from "../../components/authentication/ContinueWdGogleBtn";
 
 export default function LogInScreen() {
   const [secureText, setSecureText] = useState(true);
-  const [rememberMe, setRememberMe] = useState(false);
+  const [isChecked, setChecked] = useState(false);
+  const logInHandler = () => {
+    console.log("test");
+  };
   return (
     <SafeAreaProvider>
       <SafeAreaView className="flex-1" edges={["top", "bottom"]}>
@@ -55,15 +61,16 @@ export default function LogInScreen() {
           </View>
           <View style={styles.container}>
             <View style={styles.checkboxContainer}>
-              <Pressable>
-                <Checkbox style={styles.checkbox} />
+              <Pressable onPress={() => setRememberMe(!rememberMe)}>
+                <Checkbox
+                  value={isChecked}
+                  onValueChange={setChecked}
+                  style={styles.checkbox}
+                />
               </Pressable>
               <Text
                 style={styles.rememberMeText}
                 className="font-poppins-500medium"
-                value={rememberMe}
-                onValueChange={setRememberMe}
-                color={rememberMe ? "#3b82f6" : undefined}
               >
                 Remember Me
               </Text>
@@ -72,6 +79,9 @@ export default function LogInScreen() {
               <Text style={styles.forgetPasswordText}>Forget Password?</Text>
             </View>
           </View>
+          <CutomButton title="Log In" onPress={logInHandler} />
+          <SignUpText text={"Don't have an account?"} buttonText={"Sign up"} />
+          <ContinueWdGogleBtn />
         </View>
       </SafeAreaView>
     </SafeAreaProvider>

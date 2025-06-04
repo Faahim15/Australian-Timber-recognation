@@ -1,14 +1,33 @@
-import { View, Text, Pressable } from "react-native";
+import { View, Text, Pressable, StyleSheet } from "react-native";
+import { scale, verticalScale } from "./responsiveness/Responsive";
 
 export default function CutomButton({ title, onPress }) {
   return (
     <Pressable
       onPress={onPress}
-      className="mx-[60px] w-[254px] mt-[74px] h-[60px] bg-[#2E7D32] rounded-[14px] px-[64px] py-[18px] justify-center items-center"
+      style={styles.container}
+      className=" bg-[#2E7D32] justify-center items-center"
     >
-      <Text className="text-white text-base font-poppins-semiBold">
+      <Text style={styles.title} className="text-[#fff]  font-poppins-semiBold">
         {title}
       </Text>
     </Pressable>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    marginHorizontal: scale(60),
+    width: scale(254),
+    marginTop: verticalScale(74),
+    height: verticalScale(60),
+    borderRadius: scale(14),
+    paddingHorizontal: scale(64),
+    paddingVertical: verticalScale(18),
+  },
+  title: {
+    fontSize: scale(16),
+    lineHeight: verticalScale(24),
+    letterSpacing: scale(0),
+  },
+});

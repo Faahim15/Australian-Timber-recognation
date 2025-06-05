@@ -1,9 +1,11 @@
 import { Text, Pressable, Image, StyleSheet } from "react-native";
 import { scale, verticalScale } from "../responsiveness/Responsive";
 
-export default function ContinueWdGogleBtn() {
+export default function ContinueWdGogleBtn({ marginTop = 39 }) {
   return (
-    <Pressable style={styles.container}>
+    <Pressable
+      style={[styles.container, { marginTop: verticalScale(marginTop) }]}
+    >
       <Image
         style={styles.image}
         source={require("../../assets/images/flat-color-icons_google.png")}
@@ -19,7 +21,6 @@ const styles = StyleSheet.create({
     height: verticalScale(47),
     flexDirection: "row",
     marginHorizontal: scale(49),
-    marginTop: verticalScale(47),
     marginBottom: verticalScale(84),
     borderRadius: scale(24),
     backgroundColor: "#FFFFFF",

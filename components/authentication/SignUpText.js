@@ -1,12 +1,21 @@
 import { View, Text, Pressable, StyleSheet } from "react-native";
 import { verticalScale, scale } from "../responsiveness/Responsive";
 
-export default function SignUpText({ text, buttonText }) {
+export default function SignUpText({
+  onPress,
+  text,
+  buttonText,
+  marginTop = 59,
+}) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { marginTop: verticalScale(marginTop) }]}>
       <Text className="text-[#3E2723]" style={styles.titleText}>
         {text}
-        <Text className="text-[#2E7D32]" style={styles.titleText}>
+        <Text
+          onPress={onPress}
+          className="text-[#2E7D32]"
+          style={styles.titleText}
+        >
           {buttonText}
         </Text>
       </Text>
@@ -21,7 +30,6 @@ const styles = StyleSheet.create({
   container: {
     width: scale(220),
     height: verticalScale(47),
-    marginTop: verticalScale(59),
     marginLeft: scale(70),
     gap: verticalScale(7),
   },

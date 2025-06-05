@@ -8,7 +8,14 @@ import {
   verticalScale,
 } from "../../components/responsiveness/Responsive";
 import CutomButton from "../../components/CutomButton";
+import SignUpText from "../../components/authentication/SignUpText";
+import ContinueWdGogleBtn from "../../components/authentication/ContinueWdGogleBtn";
+import { useNavigation } from "@react-navigation/native";
 export default function SignUpScreen() {
+  const navigation = useNavigation();
+  function signInHandler() {
+    navigation.navigate("LogIn");
+  }
   return (
     <SafeAreaProvider>
       <SafeAreaView className="bg-[#FAFDFA] flex-1">
@@ -25,6 +32,13 @@ export default function SignUpScreen() {
         <PasswordInput />
         <Text style={styles.text}>Password must be 8 character</Text>
         <CutomButton title="Sign Up" marginTop={32} />
+        <SignUpText
+          marginTop={32}
+          text={"Already have an account?"}
+          buttonText={"Sign in"}
+          onPress={signInHandler}
+        />
+        <ContinueWdGogleBtn marginTop={33} />
       </SafeAreaView>
     </SafeAreaProvider>
   );

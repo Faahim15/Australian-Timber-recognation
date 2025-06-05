@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
   container: {
     marginHorizontal: scale(60),
     width: scale(254),
-    marginTop: verticalScale(74),
     height: verticalScale(60),
     borderRadius: scale(14),
     paddingHorizontal: scale(64),

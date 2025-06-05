@@ -15,6 +15,8 @@ import CreateAccountScreen from "./screens/WelcomeScreen/CreateAccountScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import LogInScreen from "./screens/AuthScreens/LogInScreen";
 import SignUpScreen from "./screens/AuthScreens/SignUpScreen";
+import OtpVerificationInput from "./components/authentication/OtpVerificationInput";
+import PasswordRecoveryScreen from "./screens/AuthScreens/PasswordRecoveryScreen";
 export default function App() {
   const [fontsLoaded] = useFonts({
     Poppins_400Regular,
@@ -53,10 +55,15 @@ export default function App() {
           name="LogIn"
           component={LogInScreen}
           options={{ headerShown: false }}
-        /> */}
+        />
         <Stack.Screen
           name="SignUp"
           component={SignUpScreen}
+          options={{ headerShown: false }}
+        /> */}
+        <Stack.Screen
+          name="PasswordRecoveryScreen"
+          component={PasswordRecoveryScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

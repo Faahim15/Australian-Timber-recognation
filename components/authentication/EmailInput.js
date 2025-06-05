@@ -10,7 +10,10 @@ export default function EmailInput({
   return (
     <View>
       <TextInput
-        style={[styles.textInputContainer, { marginTop: marginTop }]}
+        style={[
+          styles.textInputContainer,
+          { marginTop: verticalScale(marginTop) },
+        ]}
         className="font-poppins"
         placeholder={placeholder}
         keyboardType={keyboardType}

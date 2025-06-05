@@ -19,7 +19,9 @@ export default function LogInScreen() {
   function skipButtonHanlder() {
     navigation.navigate("CreateAccountScreen");
   }
-
+  function signUpHandler() {
+    navigation.navigate("SignUp");
+  }
   return (
     <SafeAreaProvider>
       <SafeAreaView className="flex-1 bg-[#FAFDFA]" edges={["top", "bottom"]}>
@@ -33,7 +35,11 @@ export default function LogInScreen() {
           <PasswordInput />
           <CheckBox />
           <CutomButton title="Log In" onPress={logInHandler} />
-          <SignUpText text={"Don't have an account?"} buttonText={"Sign up"} />
+          <SignUpText
+            onPress={signUpHandler}
+            text={"Don't have an account?"}
+            buttonText={"Sign up"}
+          />
 
           <ContinueWdGogleBtn />
         </View>

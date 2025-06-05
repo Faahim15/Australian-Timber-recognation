@@ -1,0 +1,43 @@
+import { View, Text, StyleSheet } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { LoginTitle } from "../../components/authentication/CustomSignNdLogIn";
+import EmailInput from "../../components/authentication/EmailInput";
+import PasswordInput from "../../components/authentication/PasswordInput";
+import {
+  scale,
+  verticalScale,
+} from "../../components/responsiveness/Responsive";
+import CutomButton from "../../components/CutomButton";
+export default function SignUpScreen() {
+  return (
+    <SafeAreaProvider>
+      <SafeAreaView className="bg-[#FAFDFA] flex-1">
+        <LoginTitle
+          title={"Sign up now"}
+          subtitle={"Please fill the details and create account"}
+        />
+        <EmailInput
+          placeholder={"Enter your name.."}
+          keyboardType="default"
+          autoCapitalize="words"
+        />
+        <EmailInput marginTop={24} />
+        <PasswordInput />
+        <Text style={styles.text}>Password must be 8 character</Text>
+        <CutomButton title="Sign Up" marginTop={32} />
+      </SafeAreaView>
+    </SafeAreaProvider>
+  );
+}
+
+const styles = StyleSheet.create({
+  text: {
+    fontfamily: "poppins-400regular",
+    fontSize: scale(14),
+    lineHeight: verticalScale(24),
+    letterSpacing: scale(0),
+    color: "#535353",
+    marginHorizontal: scale(20),
+    marginTop: verticalScale(16),
+  },
+});

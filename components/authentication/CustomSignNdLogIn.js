@@ -1,9 +1,9 @@
 import { View, Text, Pressable, StyleSheet } from "react-native";
 import { scale, verticalScale } from "../responsiveness/Responsive";
 
-export function SkipButton() {
+export function SkipButton({ onPress }) {
   return (
-    <Pressable>
+    <Pressable onPress={onPress}>
       <Text className="font-poppins text-center" style={styles.title}>
         Skip
       </Text>
@@ -20,7 +20,7 @@ export function LoginTitle({ title, subtitle }) {
       >
         {title}
       </Text>
-      <Text style={styles.subtitle} className="font-poppins text-center">
+      <Text style={styles.subtitle} className="poppins-400regular text-center">
         {subtitle}
       </Text>
     </View>
@@ -50,5 +50,7 @@ const styles = StyleSheet.create({
   subtitle: {
     lineHeight: verticalScale(21),
     fontSize: scale(14),
+    letterSpacing: scale(0),
+    color: "#3E2723",
   },
 });

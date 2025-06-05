@@ -1,11 +1,11 @@
 import { View, Text, Pressable, StyleSheet } from "react-native";
 import { scale, verticalScale } from "./responsiveness/Responsive";
 
-export default function CutomButton({ title, onPress }) {
+export default function CutomButton({ title, onPress, marginTop = 74 }) {
   return (
     <Pressable
       onPress={onPress}
-      style={styles.container}
+      style={[styles.container, { marginTop: verticalScale(marginTop) }]}
       className=" bg-[#2E7D32] justify-center items-center"
     >
       <Text style={styles.title} className="text-[#fff]  font-poppins-semiBold">

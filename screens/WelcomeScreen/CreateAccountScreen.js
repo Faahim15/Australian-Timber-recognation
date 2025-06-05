@@ -2,8 +2,13 @@ import { View, Text, Image } from "react-native";
 import CustomTitle from "../../components/CustomTitle";
 import CutomButton from "../../components/CutomButton";
 import DotIndicator from "../../components/DotIndicator";
+import { useNavigation } from "@react-navigation/native";
 
 export default function CreateAccountScreen() {
+  const navigation = useNavigation();
+  function createAccountHandler() {
+    navigation.navigate("LogIn");
+  }
   return (
     <View className="bg-[#FAFDFA] flex-col justify-between items-center gap-y-5">
       <CustomTitle
@@ -14,7 +19,7 @@ export default function CreateAccountScreen() {
         className="w-[276.88px] h-[278px] mt-[52px] mx-[49.06px]"
         source={require("../../assets/images/account.png")}
       />
-      <CutomButton title="Create Account" />
+      <CutomButton title="Create Account" onPress={createAccountHandler} />
       <DotIndicator activeIndex={2} />
     </View>
   );

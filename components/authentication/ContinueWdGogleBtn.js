@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
     borderWidth: scale(2),
     gap: scale(8),
     paddingVertical: verticalScale(2),
-    paddingHorizontal: scale(2),
-    justifyContent: "center",
+    // paddingHorizontal: scale(2),
+    // justifyContent: "center",
     alignItems: "center",
   },
   btnText: {

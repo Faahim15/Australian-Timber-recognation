@@ -1,11 +1,29 @@
 import { View, Text, Pressable, StyleSheet } from "react-native";
 import { scale, verticalScale } from "./responsiveness/Responsive";
 
-export default function CutomButton({ title, onPress, marginTop = 74 }) {
+export default function CutomButton({
+  width = 254,
+  title,
+  onPress,
+  marginTop = 74,
+  marginHorizontal = 60,
+  borderRadius = 14,
+  paddingHorizontal = 64,
+  paddingVertical = 18,
+  height = 60,
+}) {
   return (
     <Pressable
       onPress={onPress}
-      style={[styles.container, { marginTop: verticalScale(marginTop) }]}
+      style={{
+        width: scale(width),
+        height: verticalScale(height),
+        marginTop: verticalScale(marginTop),
+        marginHorizontal: scale(marginHorizontal),
+        borderRadius: scale(borderRadius),
+        paddingHorizontal: scale(paddingHorizontal),
+        paddingVertical: verticalScale(paddingVertical),
+      }}
       className=" bg-[#2E7D32] justify-center items-center"
     >
       <Text style={styles.title} className="text-[#fff]  font-poppins-semiBold">
@@ -16,14 +34,6 @@ export default function CutomButton({ title, onPress, marginTop = 74 }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    marginHorizontal: scale(60),
-    width: scale(254),
-    height: verticalScale(60),
-    borderRadius: scale(14),
-    paddingHorizontal: scale(64),
-    paddingVertical: verticalScale(18),
-  },
   title: {
     fontSize: scale(16),
     lineHeight: verticalScale(24),

@@ -17,6 +17,10 @@ import LogInScreen from "./screens/AuthScreens/LogInScreen";
 import SignUpScreen from "./screens/AuthScreens/SignUpScreen";
 import OtpVerificationInput from "./components/authentication/OtpVerificationInput";
 import PasswordRecoveryScreen from "./screens/AuthScreens/PasswordRecoveryScreen";
+import OtpVerificationScreen from "./screens/AuthScreens/OtpVerificationScreen";
+import PasswordResetScreen from "./screens/AuthScreens/PasswordResetScreen";
+import SetPasswordScreen from "./screens/AuthScreens/SetPasswordScreen";
+import ResetSuccess from "./screens/AuthScreens/ResetSuccess";
 export default function App() {
   const [fontsLoaded] = useFonts({
     Poppins_400Regular,
@@ -30,7 +34,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen
+        <Stack.Screen
           name="GetStarted"
           component={LetsGetStartedScreen}
           options={{
@@ -60,10 +64,25 @@ export default function App() {
           name="SignUp"
           component={SignUpScreen}
           options={{ headerShown: false }}
-        /> */}
+        />
         <Stack.Screen
           name="PasswordRecoveryScreen"
           component={PasswordRecoveryScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="OtpVerificationScreen"
+          component={OtpVerificationScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="PasswordResetScreen"
+          component={PasswordResetScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ResetSuccess"
+          component={ResetSuccess}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

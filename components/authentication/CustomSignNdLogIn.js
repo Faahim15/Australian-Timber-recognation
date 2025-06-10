@@ -11,11 +11,18 @@ export function SkipButton({ onPress }) {
   );
 }
 
-export function LoginTitle({ title, subtitle }) {
+export function LoginTitle({ title, subtitle, marginTop = 40 }) {
   return (
-    <View style={styles.loginTitle}>
+    <View
+      style={[
+        styles.loginTitle,
+        {
+          marginTop: verticalScale(marginTop),
+        },
+      ]}
+    >
       <Text
-        style={styles.LogInHeader}
+        style={[styles.LogInHeader]}
         className="font-poppins-bold text-center"
       >
         {title}
@@ -25,6 +32,7 @@ export function LoginTitle({ title, subtitle }) {
       </Text>
     </View>
   );
+  vb;
 }
 
 const styles = StyleSheet.create({
@@ -39,13 +47,13 @@ const styles = StyleSheet.create({
     color: "#2E7D32",
   },
   loginTitle: {
-    marginTop: verticalScale(40),
     marginHorizontal: scale(52),
     gap: verticalScale(12),
   },
   LogInHeader: {
-    fontSize: scale(24),
     lineHeight: verticalScale(36),
+    letterSpacing: scale(0),
+    fontSize: scale(24),
   },
   subtitle: {
     lineHeight: verticalScale(21),

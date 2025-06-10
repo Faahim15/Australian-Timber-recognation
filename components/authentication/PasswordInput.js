@@ -3,16 +3,12 @@ import { scale, verticalScale } from "../responsiveness/Responsive";
 import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
 
-export default function PasswordInput() {
+export default function PasswordInput({ placeholder = "password" }) {
   const [secureText, setSecureText] = useState(true);
 
   return (
     <View style={styles.passwordInputContainer}>
-      <TextInput
-        className="font-poppins"
-        placeholder="password"
-        secureTextEntry={secureText}
-      />
+      <TextInput placeholder={placeholder} secureTextEntry={secureText} />
       <TouchableOpacity
         onPress={() => {
           setSecureText(!secureText);
@@ -40,6 +36,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     color: "#898989",
+    fontFamily: "poppins-400regular",
     fontSize: scale(12),
     lineHeight: verticalScale(16),
     letterSpacing: scale(0),

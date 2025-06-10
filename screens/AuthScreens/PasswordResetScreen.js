@@ -1,29 +1,27 @@
 import { View, Text } from "react-native";
-import { LoginTitle } from "../../components/authentication/CustomSignNdLogIn";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import EmailInput from "../../components/authentication/EmailInput";
-import CutomButton from "../../components/CutomButton";
 import BackButton from "../../components/authentication/BackButton";
+import { LoginTitle } from "../../components/authentication/CustomSignNdLogIn";
+import CutomButton from "../../components/CutomButton";
 import { useNavigation } from "@react-navigation/native";
 import { primaryButtonPreset } from "../../components/constants/PrimaryButtonPreset";
-export default function PasswordRecoveryScreen() {
+export default function PasswordResetScreen() {
   const navigation = useNavigation();
-  function resetPasswordHandler() {
-    navigation.navigate("OtpVerificationScreen");
+
+  function confirmButtonHanlder() {
+    navigation.navigate("ResetSuccess");
   }
   return (
     <SafeAreaProvider>
       <SafeAreaView className="flex-1 bg-[#FAFDFA]">
-        <BackButton />
+        <BackButton marginTop={28} />
         <LoginTitle
-          title="Forgot password"
-          subtitle="Enter your email account to reset your password"
-          marginTop={36}
+          title="Password reset"
+          subtitle="Your password has been successfully reset. Click confirm to set a new password"
         />
-        <EmailInput />
         <CutomButton
-          onPress={resetPasswordHandler}
-          title="Reset Password"
+          title="Confirm"
+          onPress={confirmButtonHanlder}
           {...primaryButtonPreset}
         />
       </SafeAreaView>

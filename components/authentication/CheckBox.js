@@ -2,8 +2,13 @@ import { View, Text, StyleSheet, Pressable } from "react-native";
 import { scale, verticalScale } from "../responsiveness/Responsive";
 import Checkbox from "expo-checkbox";
 import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 export default function CheckBox() {
   const [isChecked, setChecked] = useState(false);
+  const navigaton = useNavigation();
+  function forgetPasswordHanlder() {
+    navigaton.navigate("PasswordRecoveryScreen");
+  }
   return (
     <View style={styles.container}>
       <View style={styles.checkboxContainer}>
@@ -18,9 +23,9 @@ export default function CheckBox() {
           Remember Me
         </Text>
       </View>
-      <View>
+      <Pressable onPress={forgetPasswordHanlder}>
         <Text style={styles.forgetPasswordText}>Forget Password?</Text>
-      </View>
+      </Pressable>
     </View>
   );
 }

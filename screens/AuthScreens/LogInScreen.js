@@ -12,10 +12,11 @@ import EmailInput from "../../components/authentication/EmailInput";
 import PasswordInput from "../../components/authentication/PasswordInput";
 import { useNavigation } from "@react-navigation/native";
 export default function LogInScreen() {
-  const logInHandler = () => {
-    console.log("test");
-  };
   const navigation = useNavigation();
+  const logInHandler = () => {
+    navigation.navigate("SubscriptionPage");
+  };
+
   function skipButtonHanlder() {
     navigation.navigate("CreateAccountScreen");
   }

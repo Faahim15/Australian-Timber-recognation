@@ -21,10 +21,12 @@ import OtpVerificationScreen from "./screens/AuthScreens/OtpVerificationScreen";
 import PasswordResetScreen from "./screens/AuthScreens/PasswordResetScreen";
 import SetPasswordScreen from "./screens/AuthScreens/SetPasswordScreen";
 import ResetSuccess from "./screens/AuthScreens/ResetSuccess";
+import SubscriptionPage from "./screens/homeScreens/SubscriptionPage";
 export default function App() {
   const [fontsLoaded] = useFonts({
     Poppins_400Regular,
     Poppins_600SemiBold,
+    Poppins_500Medium,
     Poppins_700Bold,
   });
   if (!fontsLoaded) {
@@ -83,6 +85,11 @@ export default function App() {
         <Stack.Screen
           name="ResetSuccess"
           component={ResetSuccess}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SubscriptionPage"
+          component={SubscriptionPage}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

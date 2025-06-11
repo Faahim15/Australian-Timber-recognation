@@ -11,6 +11,7 @@ export default function CutomButton({
   paddingHorizontal = 64,
   paddingVertical = 18,
   height = 60,
+  lineHeight = 24,
 }) {
   return (
     <Pressable
@@ -26,7 +27,10 @@ export default function CutomButton({
       }}
       className=" bg-[#2E7D32] justify-center items-center"
     >
-      <Text style={styles.title} className="text-[#fff]  font-poppins-semiBold">
+      <Text
+        style={[styles.title, { lineHeight: verticalScale(lineHeight) }]}
+        className="text-[#fff]  font-poppins-semiBold"
+      >
         {title}
       </Text>
     </Pressable>
@@ -36,7 +40,6 @@ export default function CutomButton({
 const styles = StyleSheet.create({
   title: {
     fontSize: scale(16),
-    lineHeight: verticalScale(24),
     letterSpacing: scale(0),
   },
 });

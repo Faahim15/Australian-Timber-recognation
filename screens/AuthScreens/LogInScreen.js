@@ -14,7 +14,7 @@ import { useNavigation } from "@react-navigation/native";
 export default function LogInScreen() {
   const navigation = useNavigation();
   const logInHandler = () => {
-    navigation.navigate("SubscriptionPage");
+    navigation.navigate("MainTabs");
   };
 
   function skipButtonHanlder() {
